@@ -1,0 +1,32 @@
+@import 'src/styles/_vars';
+
+.modal {
+  position: absolute;
+  left: 180px;
+  top: 200px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation-name: scoreDisplay;
+  animation-duration: 3s;
+
+  .modal-over {
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  .modal-score {
+    font-size: 42px;
+  }
+
+  @keyframes scoreDisplay {
+    0% {
+      top: -10em;
+    }
+
+    100% {
+      top: 200px;
+    }
+  }
+}

@@ -27,7 +27,7 @@ const initialState = {
   food: getRandomCoordinates(),
   speed: 200,
   direction: 'RIGHT',
-  gameOver: false,
+  gameOver: true,
   snakeDots: [
     [0, 0],
     [2, 0],
@@ -40,6 +40,9 @@ class App extends React.Component {
   componentDidMount() {
     const { speed } = this.state;
     setInterval(this.moveSnake, speed);
+    this.setState({
+      gameOver: false,
+    });
     document.onkeydown = this.onKeyDown;
   }
 
@@ -53,10 +56,7 @@ class App extends React.Component {
    * initializes state to game over
    */
   onGameOver() {
-    const { gameOver } = this.state;
-    if (gameOver === true) {
-      this.setState(initialState);
-    }
+    this.setState(initialState);
   }
 
   /**
@@ -130,9 +130,6 @@ class App extends React.Component {
     const { snakeDots } = this.state;
     const head = snakeDots[snakeDots.length - 1];
     if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
-      this.setState({
-        gameOver: true,
-      });
       this.onGameOver();
     }
   }
@@ -147,9 +144,6 @@ class App extends React.Component {
     snake.pop();
     snake.forEach((dot) => {
       if (head[0] === dot[0] && head[1] === dot[1]) {
-        this.setState({
-          gameOver: true,
-        });
         this.onGameOver();
       }
     });
@@ -166,7 +160,6 @@ class App extends React.Component {
         food: getRandomCoordinates(),
       });
       this.enLargeSnake();
-      this.increaseSpeed();
     }
   }
 

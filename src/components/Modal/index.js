@@ -2,10 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// == Import SCSS
+import './modal.scss';
+
 // == Component
 const Modal = ({ snakeDots }) => (
-  <div>
-    {alert(`Game Over, Score : ${snakeDots.length}`)}
+  <div className="modal">
+    <p className="modal-over">Game Over</p>
+    <p className="modal-score">Score : {snakeDots.length}</p>
   </div>
 );
 
