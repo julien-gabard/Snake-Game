@@ -2,7 +2,7 @@
 import React from 'react';
 
 // == Import
-import './styles.css';
+import './app.scss';
 
 // == Composant
 const App = () => (
