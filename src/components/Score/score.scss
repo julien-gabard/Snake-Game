@@ -1,0 +1,15 @@
+@import 'src/styles/_vars';
+
+.score {
+  position: absolute;
+  right: -15em;
+
+  .score-overhall {
+    font-size: 42px;
+    color: $second-color;
+
+    .score-overhall__number {
+      color: $number;
+    }
+  }
+}

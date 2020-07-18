@@ -5,6 +5,7 @@ import React from 'react';
 import Snake from 'src/components/Snake';
 import Food from 'src/components/Food';
 import Modal from 'src/components/Modal';
+import Score from 'src/components/Score';
 
 // == Import
 import './app.scss';
@@ -194,6 +195,7 @@ class App extends React.Component {
       <div className="game-area">
         <Snake snakeDots={snakeDots} />
         <Food dot={food} />
+        <Score snakeDots={snakeDots} />
         {gameOver && <Modal />}
       </div>
     );
