@@ -194,7 +194,7 @@ class App extends React.Component {
       <div className="game-area">
         <Snake snakeDots={snakeDots} />
         <Food dot={food} />
-        {gameOver && <Modal snakeDots={snakeDots} />}
+        {gameOver && <Modal />}
       </div>
     );
   }
