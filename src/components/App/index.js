@@ -3,6 +3,7 @@ import React from 'react';
 
 // == Import Components
 import Snake from 'src/components/Snake';
+import Food from 'src/components/Food';
 
 // == Import
 import './app.scss';
@@ -33,11 +34,12 @@ class App extends React.Component {
   state = initialState;
 
   render() {
-    const { snakeDots } = this.state;
+    const { snakeDots, food } = this.state;
 
     return (
       <div className="game-area">
         <Snake snakeDots={snakeDots} />
+        <Food dot={food} />
       </div>
     );
   }
