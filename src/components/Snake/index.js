@@ -7,7 +7,7 @@ import './snake.scss';
 
 // == Component
 const Snake = ({ snakeDots }) => (
-  <div>
+  <>
     {snakeDots.map((dot, i) => {
       const style = {
         left: `${dot[0]}%`,
@@ -15,10 +15,10 @@ const Snake = ({ snakeDots }) => (
       };
       return (
         // eslint-disable-next-line react/no-array-index-key
-        <div className="snake-dot" key={i} style={style} />
+        <div className="snake" key={i} style={style} />
       );
     })}
-  </div>
+  </>
 );
 
 // == PropTypes

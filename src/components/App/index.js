@@ -36,7 +36,7 @@ class App extends React.Component {
     const { snakeDots } = this.state;
 
     return (
-      <div className="app">
+      <div className="game-area">
         <Snake snakeDots={snakeDots} />
       </div>
     );
