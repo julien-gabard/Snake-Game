@@ -1,8 +1,10 @@
+@import 'src/styles/_vars';
+
 .food {
   position: absolute;
   width: 2%;
   height: 2%;
-  background: red;
-  border: 1px solid #fff;
+  background: $alternate-color;
+  border: 1px solid $second-color;
   z-index: 1;
 }

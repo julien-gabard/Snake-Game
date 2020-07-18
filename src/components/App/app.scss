@@ -1,8 +1,10 @@
+@import 'src/styles/_vars';
+
 .game-area {
   position: relative;
   margin: auto;
   margin-top: 50px;
   width: 600px;
   height: 600px;
-  border: 2px solid #000;
+  border: 2px solid $primary-color;
 }
