@@ -14,7 +14,8 @@ const Snake = ({ snakeDots }) => (
         top: `${dot[1]}%`,
       };
       return (
-        <div className="snake-dot" key={i} style={style}></div>
+        // eslint-disable-next-line react/no-array-index-key
+        <div className="snake-dot" key={i} style={style} />
       );
     })}
   </div>
