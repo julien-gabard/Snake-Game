@@ -4,6 +4,7 @@ import React from 'react';
 // == Import Components
 import Snake from 'src/components/Snake';
 import Food from 'src/components/Food';
+import Modal from 'src/components/Modal';
 
 // == Import
 import './app.scss';
@@ -26,6 +27,7 @@ const initialState = {
   food: getRandomCoordinates(),
   speed: 200,
   direction: 'RIGHT',
+  gameOver: false,
   snakeDots: [
     [0, 0],
     [2, 0],
@@ -48,12 +50,13 @@ class App extends React.Component {
   }
 
   /**
-   * send me an alert if the game is lost
+   * initializes state to game over
    */
   onGameOver() {
-    const { snakeDots } = this.state;
-    alert(`Game Over, Score : ${snakeDots.length}`);
-    this.setState(initialState);
+    const { gameOver } = this.state;
+    if (gameOver === true) {
+      this.setState(initialState);
+    }
   }
 
   /**
@@ -127,6 +130,9 @@ class App extends React.Component {
     const { snakeDots } = this.state;
     const head = snakeDots[snakeDots.length - 1];
     if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
+      this.setState({
+        gameOver: true,
+      });
       this.onGameOver();
     }
   }
@@ -141,6 +147,9 @@ class App extends React.Component {
     snake.pop();
     snake.forEach((dot) => {
       if (head[0] === dot[0] && head[1] === dot[1]) {
+        this.setState({
+          gameOver: true,
+        });
         this.onGameOver();
       }
     });
@@ -186,12 +195,13 @@ class App extends React.Component {
   }
 
   render() {
-    const { snakeDots, food } = this.state;
+    const { snakeDots, food, gameOver } = this.state;
 
     return (
       <div className="game-area">
         <Snake snakeDots={snakeDots} />
         <Food dot={food} />
+        {gameOver && <Modal snakeDots={snakeDots} />}
       </div>
     );
   }
