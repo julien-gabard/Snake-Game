@@ -39,12 +39,26 @@ class App extends React.Component {
     document.onkeydown = this.onKeyDown;
   }
 
+  componentDidUpdate() {
+    this.checkIfOutOfBorders();
+    this.checkIfCollapsed();
+    this.checkIfEat();
+  }
+
+  /**
+   * send me an alert if the game is lost
+   */
+  onGameOver() {
+    const { snakeDots } = this.state;
+    alert(`Game Over, Snake lenght is ${snakeDots.length}`);
+    this.setState(initialState);
+  }
+
   /**
    * binding of arrow keys to state "direction"
    * @param evt "event"
    */
   onKeyDown = (evt) => {
-    evt = evt || window.event;
     switch (evt.keyCode) {
       case 38:
         this.setState({
@@ -102,6 +116,71 @@ class App extends React.Component {
       // I add the new coordinates in state
       snakeDots: dots,
     });
+  }
+
+  /**
+   * I check if the head of the snake does not touch the edges
+   */
+  checkIfOutOfBorders() {
+    const { snakeDots } = this.state;
+    const head = snakeDots[snakeDots.length - 1];
+    if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
+      this.onGameOver();
+    }
+  }
+
+  /**
+   * I control if the head of the snake does not touch that tail
+   */
+  checkIfCollapsed() {
+    const { snakeDots } = this.state;
+    const snake = [...snakeDots];
+    const head = snake[snake.length - 1];
+    snake.pop();
+    snake.forEach((dot) => {
+      if (head[0] === dot[0] && head[1] === dot[1]) {
+        this.onGameOver();
+      }
+    });
+  }
+
+  /**
+   * I control if the head of the snake passes over the food element
+   */
+  checkIfEat() {
+    const { snakeDots, food } = this.state;
+    const head = snakeDots[snakeDots.length - 1];
+    if (head[0] === food[0] && head[1] === food[1]) {
+      this.setState({
+        food: getRandomCoordinates(),
+      });
+      this.enLargeSnake();
+      this.increaseSpeed();
+    }
+  }
+
+  /**
+   * I add an element to the snake after passing on the food element
+   */
+  enLargeSnake() {
+    const { snakeDots } = this.state;
+    const newSnake = [...snakeDots];
+    newSnake.unshift([]);
+    this.setState({
+      snakeDots: newSnake,
+    });
+  }
+
+  /**
+   * condition on the speed of the snake
+   */
+  increaseSpeed() {
+    const { speed } = this.state;
+    if (speed > 10) {
+      this.setState({
+        speed: speed - 10,
+      });
+    }
   }
 
   render() {
