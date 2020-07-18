@@ -19,7 +19,7 @@ const Food = ({ dot }) => {
 
 // == PropTypes
 Food.propTypes = {
-  dot: PropTypes.number.isRequired,
+  dot: PropTypes.array.isRequired,
 };
 
 // == Export

@@ -15,8 +15,10 @@ import './app.scss';
 const getRandomCoordinates = () => {
   const min = 1;
   const max = 98;
-  const x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
-  const y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  const randomGenX = (Math.random() * (max - min + 1)) + min;
+  const randomGenY = (Math.random() * (max - min + 1)) + min;
+  const x = Math.floor(randomGenX / 2) * 2;
+  const y = Math.floor(randomGenY / 2) * 2;
   return [x, y];
 };
 
@@ -50,7 +52,7 @@ class App extends React.Component {
    */
   onGameOver() {
     const { snakeDots } = this.state;
-    alert(`Game Over, Snake lenght is ${snakeDots.length}`);
+    alert(`Game Over, Score : ${snakeDots.length}`);
     this.setState(initialState);
   }
 
