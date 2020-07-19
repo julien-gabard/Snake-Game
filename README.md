@@ -1,6 +1,6 @@
-<div align="center"><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="200px;"/></div>
+<div align="center"><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="200px"/></div>
 
-# <p align="center">Snake Game &copy;</p>
+<div align="center"><h1 size="4">Snake Game &copy;</h1></div>
 
 ----------------
 
