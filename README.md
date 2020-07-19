@@ -6,11 +6,8 @@
 
 ## Game editor
 **Julien Gabard**
-|*[Facebook](https://www.facebook.com/julien.gabard.3)*|
----
-
-|*[Linkedin](https://www.linkedin.com/in/julien-gabard/)*|
----
+##### *[Facebook](https://www.facebook.com/julien.gabard.3)*
+##### *[Linkedin](https://www.linkedin.com/in/julien-gabard/)*
 
 ## Contrôle
 Directional arrows.
