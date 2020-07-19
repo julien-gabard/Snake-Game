@@ -1,4 +1,6 @@
-# <div style="display:flex; align-items:center;"><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="100px;"/>Snake Game &copy;</div>
+<img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="100px;"/>
+
+# <p align="center">Snake Game &copy;</p>
 
 ----------------
 
