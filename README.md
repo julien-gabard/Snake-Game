@@ -24,6 +24,7 @@ The application launches directly on the browser.
   - *enzyme*
   - *jsdom*
   - *ect...*
+  > See the file - package.json
 - **VScode**
   - *ESlint*
   - *Apache Conf*
