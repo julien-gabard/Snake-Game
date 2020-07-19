@@ -102,26 +102,28 @@ class App extends React.Component {
    * snake movement in one direction
    */
   moveSnake = () => {
-    const { snakeDots, direction } = this.state;
+    const { snakeDots, direction, onPlay } = this.state;
 
     const dots = [...snakeDots];
 
     let head = dots[dots.length - 1];
 
-    switch (direction) {
-      case 'RIGHT':
-        head = [head[0] + 2, head[1]];
-        break;
-      case 'LEFT':
-        head = [head[0] - 2, head[1]];
-        break;
-      case 'DOWN':
-        head = [head[0], head[1] + 2];
-        break;
-      case 'UP':
-        head = [head[0], head[1] - 2];
-        break;
-      default:
+    if (onPlay === true) {
+      switch (direction) {
+        case 'RIGHT':
+          head = [head[0] + 2, head[1]];
+          break;
+        case 'LEFT':
+          head = [head[0] - 2, head[1]];
+          break;
+        case 'DOWN':
+          head = [head[0], head[1] + 2];
+          break;
+        case 'UP':
+          head = [head[0], head[1] - 2];
+          break;
+        default:
+      }
     }
 
     // I add the head element

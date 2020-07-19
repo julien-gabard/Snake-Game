@@ -13,9 +13,8 @@ const Snake = ({
   moveSnake,
 }) => {
   useEffect(() => {
-    if (onPlay === true) {
-      setInterval(moveSnake, speed);
-    }
+    const move = setInterval(moveSnake, speed);
+    return () => clearInterval(move);
   }, [onPlay]);
 
   return (
