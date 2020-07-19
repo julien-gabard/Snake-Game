@@ -7,6 +7,9 @@ import Food from 'src/components/Food';
 import GameOver from 'src/components/GameOver';
 import Score from 'src/components/Score';
 
+// == Import logo
+import { Play } from 'react-feather';
+
 // == Import
 import './app.scss';
 
@@ -28,7 +31,7 @@ const initialState = {
   food: getRandomCoordinates(),
   speed: 200,
   direction: 'RIGHT',
-  gameOver: true,
+  gameOver: false,
   snakeDots: [
     [0, 0],
     [2, 0],
@@ -41,9 +44,6 @@ class App extends React.Component {
   componentDidMount() {
     const { speed } = this.state;
     setInterval(this.moveSnake, speed);
-    this.setState({
-      gameOver: false,
-    });
     document.onkeydown = this.onKeyDown;
   }
 
@@ -193,7 +193,12 @@ class App extends React.Component {
 
     return (
       <div className="game-area">
-        <button type="button" className="game-area__button">=</button>
+        <button
+          type="button"
+          className="game-area__button"
+        >
+          <Play size="42" />
+        </button>
         <Snake snakeDots={snakeDots} />
         <Food dot={food} />
         <Score snakeDots={snakeDots} />
