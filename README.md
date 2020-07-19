@@ -39,4 +39,4 @@ The application launches directly on the browser.
 #### v1.0
 > Default game.
 #### v1.1
-> Addition of a play button and a stop button.
+> Addition of a play button

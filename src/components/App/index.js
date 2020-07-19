@@ -63,6 +63,7 @@ class App extends React.Component {
    */
   onPlayGame = () => {
     const { speed } = this.state;
+
     setInterval(this.moveSnake, speed);
   }
 
@@ -103,6 +104,7 @@ class App extends React.Component {
     const { snakeDots, direction } = this.state;
 
     const dots = [...snakeDots];
+
     let head = dots[dots.length - 1];
 
     switch (direction) {
@@ -120,10 +122,13 @@ class App extends React.Component {
         break;
       default:
     }
+
     // I add the head element
     dots.push(head);
+
     // I remove the first element
     dots.shift();
+
     this.setState({
       // I add the new coordinates in state
       snakeDots: dots,
@@ -135,7 +140,9 @@ class App extends React.Component {
    */
   checkIfOutOfBorders() {
     const { snakeDots } = this.state;
+
     const head = snakeDots[snakeDots.length - 1];
+
     if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
       this.onGameOver();
     }
@@ -146,9 +153,14 @@ class App extends React.Component {
    */
   checkIfCollapsed() {
     const { snakeDots } = this.state;
+
     const snake = [...snakeDots];
+
     const head = snake[snake.length - 1];
+
+    // I delete the last element of the snake
     snake.pop();
+
     snake.forEach((dot) => {
       if (head[0] === dot[0] && head[1] === dot[1]) {
         this.onGameOver();
@@ -161,22 +173,30 @@ class App extends React.Component {
    */
   checkIfEat() {
     const { snakeDots, food } = this.state;
+
     const head = snakeDots[snakeDots.length - 1];
+
     if (head[0] === food[0] && head[1] === food[1]) {
       this.setState({
         food: getRandomCoordinates(),
       });
-      this.enLargeSnake();
+
+      this.largeSnake();
     }
   }
 
   /**
    * I add an element to the snake after passing on the food element
    */
-  enLargeSnake() {
+  largeSnake() {
     const { snakeDots } = this.state;
+
     const newSnake = [...snakeDots];
+
+    // I add one or more elements at the start of my coordinate table
     newSnake.unshift([]);
+
+    // I then add the newSnake in the state
     this.setState({
       snakeDots: newSnake,
     });
@@ -187,6 +207,7 @@ class App extends React.Component {
    */
   increaseSpeed() {
     const { speed } = this.state;
+
     if (speed > 10) {
       this.setState({
         speed: speed - 10,
