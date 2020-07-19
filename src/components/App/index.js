@@ -42,8 +42,6 @@ class App extends React.Component {
   state = initialState;
 
   componentDidMount() {
-    const { speed } = this.state;
-    setInterval(this.moveSnake, speed);
     document.onkeydown = this.onKeyDown;
   }
 
@@ -58,6 +56,14 @@ class App extends React.Component {
    */
   onGameOver() {
     this.setState(initialState);
+  }
+
+  /**
+   * Play the game
+   */
+  onPlayGame = () => {
+    const { speed } = this.state;
+    setInterval(this.moveSnake, speed);
   }
 
   /**
@@ -189,13 +195,18 @@ class App extends React.Component {
   }
 
   render() {
-    const { snakeDots, food, gameOver } = this.state;
+    const {
+      snakeDots,
+      food,
+      gameOver,
+    } = this.state;
 
     return (
       <div className="game-area">
         <button
           type="button"
           className="game-area__button"
+          onClick={this.onPlayGame}
         >
           <Play size="42" />
         </button>
