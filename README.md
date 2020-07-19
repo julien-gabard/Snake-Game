@@ -1,4 +1,4 @@
-<img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="100px;"/>
+<div align="center"><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="200px;"/></div>
 
 # <p align="center">Snake Game &copy;</p>
 
