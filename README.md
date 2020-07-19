@@ -5,7 +5,12 @@
 ----------------
 
 ## Game editor
-Gabard julien
+**Julien Gabard**
+|*[Facebook](https://www.facebook.com/julien.gabard.3)*|
+---
+
+|*[Linkedin](https://www.linkedin.com/in/julien-gabard/)*|
+---
 
 ## Contrôle
 Directional arrows.
@@ -24,7 +29,7 @@ The application launches directly on the browser.
   - *enzyme*
   - *jsdom*
   - *ect...*
-  > See the file - package.json
+  > See the file - [package.json](package.json)
 - **VScode**
   - *ESlint*
   - *Apache Conf*
