@@ -1,6 +1,6 @@
 <div align="center"><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="200px"/></div>
 
-<div align="center"><h1 size="4">Snake Game &copy;</h1></div>
+<div align="center"><h1 size="4">Snake Game &copy; v0.2</h1></div>
 
 ----------------
 
@@ -38,8 +38,8 @@ The application launches directly on the browser.
 - **Linux**
   - *Ubuntu 20.04*
 
-## Version
-#### v0.1
-> Default game.
+## Version (history)
 #### v0.2
 > Addition of a play button
+#### v0.1
+> Default game.
