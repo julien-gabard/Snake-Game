@@ -40,6 +40,6 @@ The application launches directly on the browser.
 
 ## Version (history)
 #### v0.2
-> Addition of a play button
+> Addition of a play button.
 #### v0.1
-> Default game.
+> functional base set.
