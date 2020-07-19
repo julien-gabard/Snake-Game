@@ -57,6 +57,7 @@
   "dependencies": {
     "prop-types": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "react-feather": "^2.0.8"
   }
 }
