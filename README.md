@@ -39,7 +39,7 @@ The application launches directly on the browser.
   - *Ubuntu 20.04*
 
 ## Version
-#### v1.0
+#### v0.1
 > Default game.
-#### v1.1
+#### v0.2
 > Addition of a play button
