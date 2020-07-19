@@ -1,6 +1,6 @@
 @import 'src/styles/_vars';
 
-.modal {
+.gameOver {
   position: absolute;
   left: 180px;
   top: 200px;
@@ -11,7 +11,7 @@
   animation-name: scoreDisplay;
   animation-duration: 3s;
 
-  .modal-over {
+  .gameOver-p {
     font-size: 48px;
     font-weight: bold;
   }

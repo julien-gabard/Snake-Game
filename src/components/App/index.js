@@ -4,7 +4,7 @@ import React from 'react';
 // == Import Components
 import Snake from 'src/components/Snake';
 import Food from 'src/components/Food';
-import Modal from 'src/components/Modal';
+import GameOver from 'src/components/GameOver';
 import Score from 'src/components/Score';
 
 // == Import
@@ -196,7 +196,7 @@ class App extends React.Component {
         <Snake snakeDots={snakeDots} />
         <Food dot={food} />
         <Score snakeDots={snakeDots} />
-        {gameOver && <Modal />}
+        {gameOver && <GameOver />}
       </div>
     );
   }
