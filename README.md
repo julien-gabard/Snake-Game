@@ -1,4 +1,4 @@
-<div align="center"><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="200px"/></div>
+<div align="center"><img src="src/assets/favicon.ico" alt="Snake Logo" width="200px"/></div>
 
 <div align="center"><h1 size="4">Snake Game &copy; v0.2</h1></div>
 
