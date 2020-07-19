@@ -32,6 +32,7 @@ const initialState = {
   speed: 200,
   direction: 'RIGHT',
   gameOver: false,
+  onPlay: false,
   snakeDots: [
     [0, 0],
     [2, 0],
@@ -59,12 +60,12 @@ class App extends React.Component {
   }
 
   /**
-   * Play the game
+   * Play the snake game
    */
   onPlayGame = () => {
-    const { speed } = this.state;
-
-    setInterval(this.moveSnake, speed);
+    this.setState({
+      onPlay: true,
+    });
   }
 
   /**
@@ -220,6 +221,8 @@ class App extends React.Component {
       snakeDots,
       food,
       gameOver,
+      onPlay,
+      speed,
     } = this.state;
 
     return (
@@ -231,7 +234,12 @@ class App extends React.Component {
         >
           <Play size="42" />
         </button>
-        <Snake snakeDots={snakeDots} />
+        <Snake
+          snakeDots={snakeDots}
+          onPlay={onPlay}
+          speed={speed}
+          moveSnake={this.moveSnake}
+        />
         <Food dot={food} />
         <Score snakeDots={snakeDots} />
         {gameOver && <GameOver />}
