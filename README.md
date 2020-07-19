@@ -38,7 +38,7 @@ The application launches directly on the browser.
 - **Linux**
   - *Ubuntu 20.04*
 
-## Version (history)
+## Version history
 #### v0.2
 > Addition of a play button.
 #### v0.1
