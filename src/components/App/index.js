@@ -193,6 +193,7 @@ class App extends React.Component {
 
     return (
       <div className="game-area">
+        <button type="button" className="game-area__button">=</button>
         <Snake snakeDots={snakeDots} />
         <Food dot={food} />
         <Score snakeDots={snakeDots} />

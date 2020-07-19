@@ -21,4 +21,4 @@ L'application se lance directement sur le navigateur.
 - Linux
 
 ## Version
-1.0
+Début de la version 1.1
