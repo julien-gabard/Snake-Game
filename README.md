@@ -1,4 +1,4 @@
-# <div style="display:flex; align-items:center; justify-content:center;"><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="100px;"/>Snake Game &copy;</div>
+# <div><img src="src/assets/images/SnakeLogo.png" alt="Snake Logo" width="100px;"/>Snake Game &copy;</div>
 
 ----------------
 
