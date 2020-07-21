@@ -8,9 +8,6 @@ import GameOver from 'src/components/GameOver';
 import Score from 'src/components/Score';
 import Menu from 'src/components/Menu';
 
-// == Import logo
-import { Play } from 'react-feather';
-
 // == Import
 import './app.scss';
 

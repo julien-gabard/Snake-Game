@@ -24,7 +24,7 @@ const Menu = ({ play }) => (
 
 // == PropTypes
 Menu.propTypes = {
- play: PropTypes.func.isRequired,
+  play: PropTypes.func.isRequired,
 };
 
 // == Export
