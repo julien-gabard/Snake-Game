@@ -246,6 +246,7 @@ class App extends React.Component {
           onClick={this.onPlayGame}
         >
           <Play size="42" />
+          <span className="game-area__button__name">Play</span>
         </button>
         <Snake
           snakeDots={snakeDots}
