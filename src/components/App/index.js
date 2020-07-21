@@ -106,7 +106,7 @@ class App extends React.Component {
     }
     if (difficulty === 4) {
       this.setState({
-        speed: 10,
+        speed: 20,
       });
     }
   }
@@ -240,10 +240,12 @@ class App extends React.Component {
           snakeDots: initialState.snakeDots,
           food: initialState.food,
           speed: initialState.speed,
-          difficulty: initialState.difficulty,
           direction: initialState.direction,
         });
         if (onPlay === true) {
+          this.setState({
+            difficulty: initialState.difficulty,
+          });
           this.onGameOver();
         }
       }
