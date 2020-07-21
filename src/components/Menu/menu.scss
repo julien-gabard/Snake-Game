@@ -2,18 +2,60 @@
 
 .menu {
   position: absolute;
-  left: -7em;
+  left: -10em;
+  display: flex;
+  flex-direction: column;
 
-  .game-area__button {
+  .menu-button__play {
     background: none;
     border: none;
     color: $snake-color;
+    position: relative;
   
-    .game-area__button__name {
+    .menu-button__play__name {
       position: absolute;
-      left: 11px;
-      bottom: -20px;
+      bottom: -1rem;
+      left: 3.4rem;
       font-size: 1rem;
+    }
+  }
+
+  .menu-seperate {
+    height: 2px;
+    background-color: $snake-color;
+    margin-top: 3rem;
+  }
+
+  .menu-difficulty {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4em;
+    position: relative;
+
+    .menu-difficulty__name {
+      color: $second-color;
+      position: absolute;
+      top: -1.5rem;
+      left: 2.5rem;
+    }
+
+    .menu-difficulty__button__less {
+      background: none;
+      border: none;
+      color: $food-color;
+    }
+
+    .menu-difficulty__number {
+      color: $second-color;
+      font-size: 32px;
+      margin: 0 .5rem;
+    }
+  
+    .menu-difficulty__button__more {
+      background: none;
+      border: none;
+      color: $number-color;
     }
   }
 }

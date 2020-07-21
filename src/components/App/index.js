@@ -32,6 +32,7 @@ const getRandomCoordinates = () => {
 const initialState = {
   food: getRandomCoordinates(),
   speed: 200,
+  difficulty: 1,
   direction: 'RIGHT',
   gameOver: false,
   onPlay: false,
@@ -58,6 +59,7 @@ class App extends React.Component {
    * Activate the snake game launch.
    */
   onPlayGame = () => {
+    this.checkToDifficulty();
     this.setState({
       onPlay: true,
       gameOver: false,
@@ -79,6 +81,34 @@ class App extends React.Component {
    */
   onInitState() {
     this.setState(initialState);
+  }
+
+  /**
+   * modify the speed in relation to the difficulty chosen
+   */
+  checkToDifficulty = () => {
+    const { difficulty } = this.state;
+
+    if (difficulty === 1) {
+      this.setState({
+        speed: 200,
+      });
+    }
+    if (difficulty === 2) {
+      this.setState({
+        speed: 100,
+      });
+    }
+    if (difficulty === 3) {
+      this.setState({
+        speed: 50,
+      });
+    }
+    if (difficulty === 4) {
+      this.setState({
+        speed: 10,
+      });
+    }
   }
 
   /**
@@ -152,6 +182,32 @@ class App extends React.Component {
   }
 
   /**
+   * Increase difficulty by + 1
+   */
+  moreDifficulty = () => {
+    const { difficulty } = this.state;
+
+    if (difficulty < 4) {
+      this.setState({
+        difficulty: difficulty + 1,
+      });
+    }
+  }
+
+  /**
+   * decrease the difficulty by + 1
+   */
+  lessDifficulty = () => {
+    const { difficulty } = this.state;
+
+    if (difficulty <= 4 && difficulty > 1) {
+      this.setState({
+        difficulty: difficulty - 1,
+      });
+    }
+  }
+
+  /**
    * I check if the head of the snake does not touch the edges.
    */
   checkIfOutOfBorders() {
@@ -184,6 +240,7 @@ class App extends React.Component {
           snakeDots: initialState.snakeDots,
           food: initialState.food,
           speed: initialState.speed,
+          difficulty: initialState.difficulty,
           direction: initialState.direction,
         });
         if (onPlay === true) {
@@ -234,11 +291,18 @@ class App extends React.Component {
       gameOver,
       onPlay,
       speed,
+      difficulty,
     } = this.state;
 
     return (
       <div className="game-area">
-        <Menu play={this.onPlayGame} />
+        <Menu
+          play={this.onPlayGame}
+          speed={speed}
+          difficulty={difficulty}
+          moreDifficulty={this.moreDifficulty}
+          lessDifficulty={this.lessDifficulty}
+        />
         <Snake
           snakeDots={snakeDots}
           onPlay={onPlay}
