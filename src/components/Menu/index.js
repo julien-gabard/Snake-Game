@@ -1,6 +1,6 @@
 // == Import npm
-import React, { useEffect } from 'react';
-import PropTypes, { number } from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // == Import logo
 import { Play, PlusCircle, MinusCircle } from 'react-feather';
