@@ -39,6 +39,8 @@ The application launches directly on the browser.
   - *Ubuntu 20.04*
 
 ## Version history
+#### v0.3.1
+> score that adapts to the difficulty chosen.
 #### v0.3
 > Added difficulty button for snake speed.
 #### v0.2.2

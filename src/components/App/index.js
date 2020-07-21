@@ -312,7 +312,7 @@ class App extends React.Component {
           moveSnake={this.moveSnake}
         />
         <Food dot={food} />
-        <Score snakeDots={snakeDots} />
+        <Score snakeDots={snakeDots} difficulty={difficulty} />
         {gameOver && <GameOver />}
       </div>
     );
