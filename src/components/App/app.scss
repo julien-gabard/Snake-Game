@@ -7,19 +7,4 @@
   height: 600px;
   border: 2px solid $primary-color;
   background-color: rgb(170, 170, 170);
-
-  .game-area__button {
-    position: absolute;
-    left: -10em;
-    background: none;
-    border: none;
-    color: $snake-color;
-
-    .game-area__button__name {
-      position: absolute;
-      left: 11px;
-      bottom: -20px;
-      font-size: 1rem;
-    }
-  }
 }

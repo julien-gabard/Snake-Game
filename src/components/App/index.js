@@ -6,6 +6,7 @@ import Snake from 'src/components/Snake';
 import Food from 'src/components/Food';
 import GameOver from 'src/components/GameOver';
 import Score from 'src/components/Score';
+import Menu from 'src/components/Menu';
 
 // == Import logo
 import { Play } from 'react-feather';
@@ -240,14 +241,7 @@ class App extends React.Component {
 
     return (
       <div className="game-area">
-        <button
-          type="button"
-          className="game-area__button"
-          onClick={this.onPlayGame}
-        >
-          <Play size="42" />
-          <span className="game-area__button__name">Play</span>
-        </button>
+        <Menu play={this.onPlayGame} />
         <Snake
           snakeDots={snakeDots}
           onPlay={onPlay}
