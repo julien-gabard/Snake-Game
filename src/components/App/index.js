@@ -77,13 +77,6 @@ class App extends React.Component {
   }
 
   /**
-   * initialize the state by default.
-   */
-  onInitState() {
-    this.setState(initialState);
-  }
-
-  /**
    * modify the speed in relation to the difficulty chosen
    */
   checkToDifficulty = () => {
@@ -208,6 +201,17 @@ class App extends React.Component {
   }
 
   /**
+   * Initial the game.
+   */
+  resetGame() {
+    this.setState({
+      snakeDots: initialState.snakeDots,
+      food: initialState.food,
+      direction: initialState.direction,
+    });
+  }
+
+  /**
    * I check if the head of the snake does not touch the edges.
    */
   checkIfOutOfBorders() {
@@ -216,7 +220,7 @@ class App extends React.Component {
     const head = snakeDots[snakeDots.length - 1];
 
     if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
-      this.onInitState();
+      this.resetGame();
       this.onGameOver();
     }
   }
@@ -236,16 +240,8 @@ class App extends React.Component {
 
     snake.forEach((dot) => {
       if (head[0] === dot[0] && head[1] === dot[1]) {
-        this.setState({
-          snakeDots: initialState.snakeDots,
-          food: initialState.food,
-          speed: initialState.speed,
-          direction: initialState.direction,
-        });
+        this.resetGame();
         if (onPlay === true) {
-          this.setState({
-            difficulty: initialState.difficulty,
-          });
           this.onGameOver();
         }
       }
