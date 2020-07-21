@@ -39,6 +39,8 @@ The application launches directly on the browser.
   - *Ubuntu 20.04*
 
 ## Version history
+#### v0.2.1
+> fixes the launch of the game over.
 #### v0.2
 > Addition of a play button.
 #### v0.1

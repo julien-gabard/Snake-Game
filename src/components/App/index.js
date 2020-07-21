@@ -14,8 +14,9 @@ import { Play } from 'react-feather';
 import './app.scss';
 
 // == Composant
+
 /**
- * Allows you to generate a random number
+ * Allows you to generate a random number.
  */
 const getRandomCoordinates = () => {
   const min = 1;
@@ -27,6 +28,9 @@ const getRandomCoordinates = () => {
   return [x, y];
 };
 
+/**
+ * State initial
+ */
 const initialState = {
   food: getRandomCoordinates(),
   speed: 200,
@@ -53,23 +57,34 @@ class App extends React.Component {
   }
 
   /**
-   * initializes state to game over
-   */
-  onGameOver() {
-    this.setState(initialState);
-  }
-
-  /**
-   * Play the snake game
+   * Activate the snake game launch.
    */
   onPlayGame = () => {
     this.setState({
       onPlay: true,
+      gameOver: false,
     });
   }
 
   /**
-   * binding of arrow keys to state "direction"
+   * Game over and my stop the game.
+   */
+  onGameOver = () => {
+    this.setState({
+      gameOver: true,
+      onPlay: false,
+    });
+  }
+
+  /**
+   * initialize the state by default.
+   */
+  onInitState() {
+    this.setState(initialState);
+  }
+
+  /**
+   * binding of arrow keys to state "direction".
    * @param evt "event"
    */
   onKeyDown = (evt) => {
@@ -99,7 +114,7 @@ class App extends React.Component {
   }
 
   /**
-   * snake movement in one direction
+   * snake movement in one direction.
    */
   moveSnake = () => {
     const { snakeDots, direction, onPlay } = this.state;
@@ -126,20 +141,20 @@ class App extends React.Component {
       }
     }
 
-    // I add the head element
+    // I add the head element.
     dots.push(head);
 
-    // I remove the first element
+    // I remove the first element.
     dots.shift();
 
     this.setState({
-      // I add the new coordinates in state
+      // I add the new coordinates in state.
       snakeDots: dots,
     });
   }
 
   /**
-   * I check if the head of the snake does not touch the edges
+   * I check if the head of the snake does not touch the edges.
    */
   checkIfOutOfBorders() {
     const { snakeDots } = this.state;
@@ -147,15 +162,16 @@ class App extends React.Component {
     const head = snakeDots[snakeDots.length - 1];
 
     if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
+      this.onInitState();
       this.onGameOver();
     }
   }
 
   /**
-   * I control if the head of the snake does not touch that tail
+   * I control if the head of the snake does not touch that tail.
    */
   checkIfCollapsed() {
-    const { snakeDots } = this.state;
+    const { snakeDots, onPlay } = this.state;
 
     const snake = [...snakeDots];
 
@@ -166,13 +182,21 @@ class App extends React.Component {
 
     snake.forEach((dot) => {
       if (head[0] === dot[0] && head[1] === dot[1]) {
-        this.onGameOver();
+        this.setState({
+          snakeDots: initialState.snakeDots,
+          food: initialState.food,
+          speed: initialState.speed,
+          direction: initialState.direction,
+        });
+        if (onPlay === true) {
+          this.onGameOver();
+        }
       }
     });
   }
 
   /**
-   * I control if the head of the snake passes over the food element
+   * I control if the head of the snake passes over the food element.
    */
   checkIfEat() {
     const { snakeDots, food } = this.state;
@@ -189,33 +213,20 @@ class App extends React.Component {
   }
 
   /**
-   * I add an element to the snake after passing on the food element
+   * I add an element to the snake after passing on the food element.
    */
   largeSnake() {
     const { snakeDots } = this.state;
 
     const newSnake = [...snakeDots];
 
-    // I add one or more elements at the start of my coordinate table
+    // I add one or more elements at the start of my coordinate table.
     newSnake.unshift([]);
 
-    // I then add the newSnake in the state
+    // I then add the newSnake in the state.
     this.setState({
       snakeDots: newSnake,
     });
-  }
-
-  /**
-   * condition on the speed of the snake
-   */
-  increaseSpeed() {
-    const { speed } = this.state;
-
-    if (speed > 10) {
-      this.setState({
-        speed: speed - 10,
-      });
-    }
   }
 
   render() {
