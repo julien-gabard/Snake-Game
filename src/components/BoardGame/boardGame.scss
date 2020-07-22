@@ -39,7 +39,7 @@
     .menu-difficulty__name {
       color: $second-color;
       position: absolute;
-      top: -1.5rem;
+      top: -2rem;
       left: 50%;
       transform: translateX(-50%);
       text-shadow: 0.1em 0.1em 0.2em $primary-color;
@@ -52,9 +52,12 @@
     }
 
     .menu-difficulty__number {
+      position: absolute;
       color: $second-color;
       font-size: 32px;
-      margin: 0 .5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      top: .3rem;
       text-shadow: 0.1em 0.1em 0.2em $primary-color;
     }
   
@@ -62,6 +65,7 @@
       background: none;
       border: none;
       color: $number-color;
+      margin-left: 2rem;
     }
   }
 }
