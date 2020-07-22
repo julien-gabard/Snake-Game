@@ -54,6 +54,8 @@ To use it, after downloading the repo, launch the command
   - *Ubuntu 20.04*
 
 ## Version history
+#### v0.3.6
+> Editing the game over.
 #### v0.3.5
 > Rename the Menu component to BoardGame.
 #### v0.3.4

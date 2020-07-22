@@ -1,28 +1,52 @@
 @import 'src/styles/_vars';
 
+:root {
+  --animation: glitch;
+  --speed: 2s;
+  --easing: linear;
+}
+
+
 .gameOver {
   position: absolute;
-  left: 180px;
+  left: 150px;
   top: 250px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation-name: scoreDisplay;
-  animation-duration: 3s;
+  text-transform: uppercase;
+  color: $number-color;
+  text-shadow: 0px 2px $number-color;
+  animation: var(--animation) var(--speed) infinite var(--easing);
 
   .gameOver-p {
     font-size: 48px;
     font-weight: bold;
   }
 
-  @keyframes scoreDisplay {
-    0% {
-      top: -10em;
-    }
+  @keyframes glitch {
+    0%, 12%, 15%, 52%, 55%, 82%, 85%, 100% { opacity: 1; transform: scaleX(1) scaleY(1) }  
+    13% { opacity: .8; transform: scaleY(2); color: $food-color }
+    53% { opacity: .8; transform: scaleX(.7);  color: $number-color }
+    83% { opacity: .8; transform: rotate(-10deg); color: $snake-color}
+  }
 
-    100% {
-      top: 250px;
-    }
+  @keyframes hue {  
+    13% { color: $food-color }
+    53% { color: $number-color }
+    83% { color: $snake-color}
+  }
+  
+  @keyframes shrink {  
+     0% { transform: scaleY(1) }
+    50% { transform: scaleY(.5) }
+   100% { transform: scaleY(1) }
+  }
+  
+  @keyframes fade {  
+     0% { opacity: 1 }
+    50% { opacity: 0 }
+   100% { opacity: 1 }
   }
 }
