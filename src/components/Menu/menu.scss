@@ -17,6 +17,7 @@
       bottom: -1rem;
       left: 3.4rem;
       font-size: 1rem;
+      text-shadow: 0.1em 0.1em 0.2em $primary-color;
     }
   }
 
@@ -38,6 +39,7 @@
       position: absolute;
       top: -1.5rem;
       left: 2.5rem;
+      text-shadow: 0.1em 0.1em 0.2em $primary-color;
     }
 
     .menu-difficulty__button__less {
@@ -50,6 +52,7 @@
       color: $second-color;
       font-size: 32px;
       margin: 0 .5rem;
+      text-shadow: 0.1em 0.1em 0.2em $primary-color;
     }
   
     .menu-difficulty__button__more {

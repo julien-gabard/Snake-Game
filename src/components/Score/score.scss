@@ -7,9 +7,11 @@
   .score-overhall {
     font-size: 42px;
     color: $second-color;
+    text-shadow: 0.1em 0.1em 0.2em $primary-color;
 
     .score-overhall__number {
       color: $number-color;
+      text-shadow: 0.1em 0.1em 0.2em $primary-color;
     }
   }
 }
