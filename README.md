@@ -15,6 +15,23 @@ Directional arrows.
 ## Application
 The application launches directly on the browser.
 
+## Utilisation / Use
+**Français**
+- Je n'est pas encore build le projet.
+Pour l'utiliser, il faut après le téléchargement du repo lancer la commande
+  - `yarn`
+- et par la suite, après l'installation des modules faire un
+  - `yarn start`
+  > Ajouter `--open` à la fin du script `start`, ce qui permet de lancer le navigateur automatiquement.
+
+**Anglais**
+- I haven't built the project yet.
+To use it, after downloading the repo, launch the command
+  - `yarn`
+- and then, after installing the modules, do a
+  - `yarn start`
+  > Add `--open` at the end of the` start` script, which will launch the browser automatically.
+
 ## Made with
 - **React**
   - *Webpack*
