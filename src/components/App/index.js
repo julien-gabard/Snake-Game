@@ -6,7 +6,7 @@ import Snake from 'src/components/Snake';
 import Food from 'src/components/Food';
 import GameOver from 'src/components/GameOver';
 import Score from 'src/components/Score';
-import Menu from 'src/components/Menu';
+import BoardGame from 'src/components/BoardGame';
 
 // == Import
 import './app.scss';
@@ -294,7 +294,7 @@ class App extends React.Component {
 
     return (
       <div className="game-area">
-        <Menu
+        <BoardGame
           play={this.onPlayGame}
           speed={speed}
           difficulty={difficulty}

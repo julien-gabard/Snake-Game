@@ -39,6 +39,8 @@ The application launches directly on the browser.
   - *Ubuntu 20.04*
 
 ## Version history
+#### v0.3.5
+> Rename the Menu component to BoardGame.
 #### v0.3.4
 > Added shadow on the game text and frame.
 #### v0.3.3

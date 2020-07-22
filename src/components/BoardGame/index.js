@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 import { Play, PlusCircle, MinusCircle } from 'react-feather';
 
 // == Import SCSS
-import './menu.scss';
+import './boardGame.scss';
 
 // == Component
-const Menu = ({
+const BoardGame = ({
   play,
   difficulty,
   moreDifficulty,
@@ -39,7 +39,7 @@ const Menu = ({
 );
 
 // == PropTypes
-Menu.propTypes = {
+BoardGame.propTypes = {
   play: PropTypes.func.isRequired,
   difficulty: PropTypes.number.isRequired,
   moreDifficulty: PropTypes.func.isRequired,
@@ -47,4 +47,4 @@ Menu.propTypes = {
 };
 
 // == Export
-export default Menu;
+export default BoardGame;
