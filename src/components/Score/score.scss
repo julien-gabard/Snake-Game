@@ -29,6 +29,10 @@
     font-size: 20px;
     color: $snake-color;
 
+    .score-classification__number {
+      color: $second-color;
+    }
+
     .score-classification__score {
       color: $number-color;
     }
