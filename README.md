@@ -57,7 +57,7 @@ To use it, after downloading the repo, launch the command
 #### v0.3.5
 > Rename the Menu component to BoardGame.
 #### v0.3.4
-> Added shadow on the game text and frame.
+> Added shadow on the game text, snake, food and frame.
 #### v0.3.3
 > adding a wooden font.
 #### v0.3.2
