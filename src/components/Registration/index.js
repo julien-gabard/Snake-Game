@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import './registration.scss';
 
 // == Import logo
-import { Clipboard } from 'react-feather';
+import { Award } from 'react-feather';
 
 // == Component
 const Registration = ({ handleChange, pseudoSubmit, pseudo }) => {
@@ -23,7 +23,7 @@ const Registration = ({ handleChange, pseudoSubmit, pseudo }) => {
 
   return (
     <form className="registration">
-      <Clipboard size="30" className="registration__logo" />
+      <Award size="30" className="registration__logo" />
       <label htmlFor="pseudo" className="registration__label">
         <span className="registration__label__span">Pseudo</span>
         <input
