@@ -14,8 +14,10 @@
   
     .menu-button__play__name {
       position: absolute;
-      bottom: -1rem;
-      left: 3.4rem;
+      font-family: 'Lemonada', sans-serif;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
       font-size: 1rem;
       text-shadow: 0.1em 0.1em 0.2em $primary-color;
     }
@@ -38,7 +40,8 @@
       color: $second-color;
       position: absolute;
       top: -1.5rem;
-      left: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
       text-shadow: 0.1em 0.1em 0.2em $primary-color;
     }
 

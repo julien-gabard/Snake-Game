@@ -7,6 +7,10 @@ import Food from 'src/components/Food';
 import GameOver from 'src/components/GameOver';
 import Score from 'src/components/Score';
 import BoardGame from 'src/components/BoardGame';
+import Registration from 'src/components/Registration';
+
+// == Import Data
+import ClassificationData from '../../data/classification';
 
 // == Import
 import './app.scss';
@@ -36,6 +40,10 @@ const initialState = {
   direction: 'RIGHT',
   gameOver: false,
   onPlay: false,
+  userRegistration: true,
+  classScores: ClassificationData,
+  pseudo: '',
+  userScore: 0,
   snakeDots: [
     [0, 0],
     [2, 0],
@@ -59,11 +67,15 @@ class App extends React.Component {
    * Activate the snake game launch.
    */
   onPlayGame = () => {
-    this.checkToDifficulty();
-    this.setState({
-      onPlay: true,
-      gameOver: false,
-    });
+    const { userRegistration } = this.state;
+
+    if (userRegistration === false) {
+      this.checkToDifficulty();
+      this.setState({
+        onPlay: true,
+        gameOver: false,
+      });
+    }
   }
 
   /**
@@ -73,6 +85,48 @@ class App extends React.Component {
     this.setState({
       gameOver: true,
       onPlay: false,
+      userScore: 0,
+    });
+  }
+
+  /**
+   * Get the value of the registration input.
+   */
+  handleChange = (value) => {
+    this.setState({
+      pseudo: value,
+    });
+  }
+
+  /**
+   * Submit the username form.
+   */
+  pseudoSubmit = () => {
+    this.setState({
+      userRegistration: false,
+    });
+  }
+
+  controleUserScore = () => {
+    const { difficulty, snakeDots } = this.state;
+
+    let adaptScoreDiff;
+
+    if (difficulty === 1) {
+      adaptScoreDiff = snakeDots.length - 1;
+    }
+    if (difficulty === 2) {
+      adaptScoreDiff = (snakeDots.length - 1) * 1.25;
+    }
+    if (difficulty === 3) {
+      adaptScoreDiff = (snakeDots.length - 1) * 1.5;
+    }
+    if (difficulty === 4) {
+      adaptScoreDiff = (snakeDots.length - 1) * 2;
+    }
+
+    this.setState({
+      userScore: adaptScoreDiff,
     });
   }
 
@@ -262,6 +316,7 @@ class App extends React.Component {
       });
 
       this.largeSnake();
+      this.controleUserScore();
     }
   }
 
@@ -290,6 +345,10 @@ class App extends React.Component {
       onPlay,
       speed,
       difficulty,
+      classScores,
+      userRegistration,
+      userScore,
+      pseudo,
     } = this.state;
 
     return (
@@ -308,8 +367,19 @@ class App extends React.Component {
           moveSnake={this.moveSnake}
         />
         <Food dot={food} />
-        <Score snakeDots={snakeDots} difficulty={difficulty} />
+        <Score
+          classScores={classScores}
+          userScore={userScore}
+        />
         {gameOver && <GameOver />}
+        {userRegistration
+          && (
+          <Registration
+            handleChange={this.handleChange}
+            pseudoSubmit={this.pseudoSubmit}
+            pseudo={pseudo}
+          />
+          )}
       </div>
     );
   }

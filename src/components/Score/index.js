@@ -6,33 +6,22 @@ import PropTypes from 'prop-types';
 import './score.scss';
 
 // == Component
-const Score = ({ snakeDots, difficulty }) => {
-  let adapScore;
-
-  if (difficulty === 1) {
-    adapScore = snakeDots.length - 2;
-  }
-  if (difficulty === 2) {
-    adapScore = (snakeDots.length - 2) * 1.25;
-  }
-  if (difficulty === 3) {
-    adapScore = (snakeDots.length - 2) * 1.5;
-  }
-  if (difficulty === 4) {
-    adapScore = (snakeDots.length - 2) * 2;
-  }
-
-  return (
-    <div className="score">
-      <p className="score-overhall">Score : <span className="score-overhall__number">{adapScore}</span></p>
-    </div>
-  );
-};
+const Score = ({ classScores, userScore }) => (
+  <div className="score">
+    <p className="score-overhall">Score : <span className="score-overhall__number">{userScore}</span></p>
+    <div className="score-seperate" />
+    {classScores.map((classScore) => (
+      <p className="score-classification" key={classScore.id}>
+        ({classScore.id}) {classScore.pseudo} : <span className="score-classification__score">{classScore.score}</span>
+      </p>
+    ))}
+  </div>
+);
 
 // == PropTypas
 Score.propTypes = {
-  snakeDots: PropTypes.array.isRequired,
-  difficulty: PropTypes.number.isRequired,
+  classScores: PropTypes.array.isRequired,
+  userScore: PropTypes.number.isRequired,
 };
 
 // == Export

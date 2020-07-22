@@ -54,6 +54,10 @@ To use it, after downloading the repo, launch the command
   - *Ubuntu 20.04*
 
 ## Version history
+#### v0.4.1
+> New font familly.
+#### v0.4
+> Addition of a pseudo form for the classification of the score.
 #### v0.3.6
 > Editing the game over.
 #### v0.3.5

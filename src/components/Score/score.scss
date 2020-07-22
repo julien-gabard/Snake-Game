@@ -2,7 +2,7 @@
 
 .score {
   position: absolute;
-  right: -15em;
+  right: -12em;
 
   .score-overhall {
     font-size: 42px;
@@ -12,6 +12,25 @@
     .score-overhall__number {
       color: $number-color;
       text-shadow: 0.1em 0.1em 0.2em $primary-color;
+      position: fixed;
+      margin-left: 1rem;
+    }
+  }
+
+  .score-seperate {
+    height: 2px;
+    background-color: $number-color;
+    margin: 2rem 0;
+  }
+
+  .score-classification {
+    margin-top: 2rem;
+    color: $second-color;
+    font-size: 20px;
+    color: $snake-color;
+
+    .score-classification__score {
+      color: $number-color;
     }
   }
 }
