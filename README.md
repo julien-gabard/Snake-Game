@@ -56,7 +56,8 @@ To use it, after downloading the repo, launch the command
 ## Version history
 #### v0.4.3
 > Add your score in the ranking.
-<détails>
+
+<details>
   <summary> Old version... </summary>
   
   #### v0.4.2
@@ -90,4 +91,5 @@ To use it, after downloading the repo, launch the command
   > Addition of a play button.
   #### v0.1
   > functional base set.
-</détails>
+
+</details>
