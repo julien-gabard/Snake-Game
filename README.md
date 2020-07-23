@@ -1,6 +1,6 @@
 <div align="center"><img src="src/assets/favicon.ico" alt="Snake Logo" width="200px"/></div>
 
-<div align="center"><h1 size="4">Snake Game &copy; v0.4.1</h1></div>
+<div align="center"><h1 size="4">Snake Game &copy; </h1><h3>version 0.4.2</h3></div>
 
 ----------------
 
@@ -55,7 +55,8 @@ To use it, after downloading the repo, launch the command
 
 ## Version history
 #### v0.4.2
-> Addition of a classification by difficulty.
+> Addition of a classification by difficulty. TODO...
+>> Fix interval.
 #### v0.4.1
 > New font familly.
 >> Not yet finished, there remains the management of the classification when the game is over.
