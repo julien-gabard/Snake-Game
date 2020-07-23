@@ -54,7 +54,7 @@ To use it, after downloading the repo, launch the command
   - *Ubuntu 20.04*
 
 ## Version history
-#### v0.4.3
+#### v0.4.3 TODO...
 > Add your score in the ranking.
 <details>
   <summary> Old version... </summary>
