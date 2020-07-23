@@ -32,6 +32,7 @@ To use it, after downloading the repo, launch the command
 
 ## Made with
 - **React**
+  > See the file - [package.json](package.json)
   - *Webpack*
   - *Babel*
   - *React-Feather*
@@ -41,7 +42,6 @@ To use it, after downloading the repo, launch the command
   - *enzyme*
   - *jsdom*
   - *ect...*
-  > See the file - [package.json](package.json)
 - **VScode**
   - *ESlint*
   - *Apache Conf*
@@ -56,7 +56,6 @@ To use it, after downloading the repo, launch the command
 ## Version history
 #### v0.4.3
 > Add your score in the ranking.
-
 <details>
   <summary> Old version... </summary>
   
@@ -91,5 +90,4 @@ To use it, after downloading the repo, launch the command
   > Addition of a play button.
   #### v0.1
   > functional base set.
-
 </details>
