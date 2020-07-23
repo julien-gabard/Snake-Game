@@ -6,24 +6,42 @@ import PropTypes from 'prop-types';
 import './score.scss';
 
 // == Component
-const Score = ({ classScores, userScore }) => (
-  <div className="score">
-    <p className="score-overhall">Score : <span className="score-overhall__number">{userScore}</span></p>
-    <div className="score-seperate" />
-    {classScores.map((classScore) => (
-      <p className="score-classification" key={classScore.id}>
-        <span className="score-classification__number">{classScore.number} ) </span>
-        {classScore.pseudo} :
-        <span className="score-classification__score"> {classScore.score}</span>
-      </p>
-    ))}
-  </div>
-);
+const Score = ({ ranking, userScore, difficulty }) => {
+  let rankingDifficulty = ranking.difficulty_1;
+
+  if (difficulty === 1) {
+    rankingDifficulty = ranking.difficulty_1;
+  }
+  if (difficulty === 2) {
+    rankingDifficulty = ranking.difficulty_2;
+  }
+  if (difficulty === 3) {
+    rankingDifficulty = ranking.difficulty_3;
+  }
+  if (difficulty === 4) {
+    rankingDifficulty = ranking.difficulty_4;
+  }
+
+  return (
+    <div className="score">
+      <p className="score-overhall">Score : <span className="score-overhall__number">{userScore}</span></p>
+      <div className="score-seperate" />
+      {rankingDifficulty.map((rank) => (
+        <p className="score-classification" key={rank.id}>
+          <span className="score-classification__number">{rank.number} ) </span>
+          {rank.pseudo} :
+          <span className="score-classification__score"> {rank.score}</span>
+        </p>
+      ))}
+    </div>
+  );
+};
 
 // == PropTypas
 Score.propTypes = {
-  classScores: PropTypes.array.isRequired,
+  ranking: PropTypes.object.isRequired,
   userScore: PropTypes.number.isRequired,
+  difficulty: PropTypes.number.isRequired,
 };
 
 // == Export

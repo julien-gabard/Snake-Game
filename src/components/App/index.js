@@ -41,7 +41,7 @@ const initialState = {
   gameOver: false,
   onPlay: false,
   userRegistration: true,
-  classScores: ClassificationData.difficulty_1,
+  ranking: ClassificationData,
   pseudo: '',
   userScore: 0,
   snakeDots: [
@@ -58,9 +58,9 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    const { userRegistration } = this.state;
+    const { onPlay } = this.state;
 
-    if (userRegistration === false) {
+    if (onPlay === true) {
       this.checkIfOutOfBorders();
       this.checkIfCollapsed();
       this.checkIfEat();
@@ -233,7 +233,7 @@ class App extends React.Component {
   }
 
   /**
-   * Increase difficulty by + 1
+   * Increase difficulty by + 1 (max 4)
    */
   moreDifficulty = () => {
     const { difficulty } = this.state;
@@ -246,7 +246,7 @@ class App extends React.Component {
   }
 
   /**
-   * decrease the difficulty by + 1
+   * decrease the difficulty by - 1 (min 1)
    */
   lessDifficulty = () => {
     const { difficulty } = this.state;
@@ -349,7 +349,7 @@ class App extends React.Component {
       onPlay,
       speed,
       difficulty,
-      classScores,
+      ranking,
       userRegistration,
       userScore,
       pseudo,
@@ -371,7 +371,7 @@ class App extends React.Component {
           moveSnake={this.moveSnake}
         />
         <Food dot={food} />
-        <Score classScores={classScores} userScore={userScore} />
+        <Score ranking={ranking} userScore={userScore} difficulty={difficulty} />
         {gameOver && <GameOver />}
         {userRegistration
           && (

@@ -55,8 +55,9 @@ To use it, after downloading the repo, launch the command
 
 ## Version history
 #### v0.4.2
-> Addition of a classification by difficulty. TODO...
+> Addition of a classification by difficulty.
 >> Fix interval.
+>>> General optimization.
 #### v0.4.1
 > New font familly.
 >> Not yet finished, there remains the management of the classification when the game is over.
