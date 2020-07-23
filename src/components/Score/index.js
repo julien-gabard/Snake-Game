@@ -12,7 +12,9 @@ const Score = ({ classScores, userScore }) => (
     <div className="score-seperate" />
     {classScores.map((classScore) => (
       <p className="score-classification" key={classScore.id}>
-        <span className="score-classification__number">{classScore.id} )</span> {classScore.pseudo} : <span className="score-classification__score">{classScore.score}</span>
+        <span className="score-classification__number">{classScore.number} ) </span>
+        {classScore.pseudo} :
+        <span className="score-classification__score"> {classScore.score}</span>
       </p>
     ))}
   </div>

@@ -41,7 +41,7 @@ const initialState = {
   gameOver: false,
   onPlay: false,
   userRegistration: true,
-  classScores: ClassificationData,
+  classScores: ClassificationData.difficulty_1,
   pseudo: '',
   userScore: 0,
   snakeDots: [
@@ -58,9 +58,13 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    this.checkIfOutOfBorders();
-    this.checkIfCollapsed();
-    this.checkIfEat();
+    const { userRegistration } = this.state;
+
+    if (userRegistration === false) {
+      this.checkIfOutOfBorders();
+      this.checkIfCollapsed();
+      this.checkIfEat();
+    }
   }
 
   /**
@@ -255,20 +259,9 @@ class App extends React.Component {
   }
 
   /**
-   * Initial the game.
-   */
-  resetGame() {
-    this.setState({
-      snakeDots: initialState.snakeDots,
-      food: initialState.food,
-      direction: initialState.direction,
-    });
-  }
-
-  /**
    * I check if the head of the snake does not touch the edges.
    */
-  checkIfOutOfBorders() {
+  checkIfOutOfBorders = () => {
     const { snakeDots } = this.state;
 
     const head = snakeDots[snakeDots.length - 1];
@@ -282,7 +275,7 @@ class App extends React.Component {
   /**
    * I control if the head of the snake does not touch that tail.
    */
-  checkIfCollapsed() {
+  checkIfCollapsed = () => {
     const { snakeDots, onPlay } = this.state;
 
     const snake = [...snakeDots];
@@ -305,7 +298,7 @@ class App extends React.Component {
   /**
    * I control if the head of the snake passes over the food element.
    */
-  checkIfEat() {
+  checkIfEat = () => {
     const { snakeDots, food } = this.state;
 
     const head = snakeDots[snakeDots.length - 1];
@@ -321,9 +314,20 @@ class App extends React.Component {
   }
 
   /**
+   * Initial the game.
+   */
+  resetGame = () => {
+    this.setState({
+      snakeDots: initialState.snakeDots,
+      food: initialState.food,
+      direction: initialState.direction,
+    });
+  }
+
+  /**
    * I add an element to the snake after passing on the food element.
    */
-  largeSnake() {
+  largeSnake = () => {
     const { snakeDots } = this.state;
 
     const newSnake = [...snakeDots];
@@ -367,10 +371,7 @@ class App extends React.Component {
           moveSnake={this.moveSnake}
         />
         <Food dot={food} />
-        <Score
-          classScores={classScores}
-          userScore={userScore}
-        />
+        <Score classScores={classScores} userScore={userScore} />
         {gameOver && <GameOver />}
         {userRegistration
           && (
