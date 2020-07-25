@@ -86,11 +86,35 @@ class App extends React.Component {
    * Game over and my stop the game.
    */
   onGameOver = () => {
+    // const { ranking, userScore, pseudo } = this.state;
+
     this.setState({
       gameOver: true,
       onPlay: false,
       userScore: 0,
     });
+
+    // const userRank = {
+    //   id: 10,
+    //   number: 1,
+    //   name: pseudo,
+    //   score: userScore,
+    // };
+    // console.log('userRank', userRank);
+
+    // const newRanking = ranking.difficulty_1;
+
+    // newRanking.forEach((rank) => {
+    //   if (userScore >= rank.score) {
+    //     console.log('Rang inférieure', rank);
+    //     // rank.splice(0, 0, userRank);
+    //     // rank.pop();
+
+    //     if (userScore === rank.score) {
+    //       console.log('égale', rank);
+    //     }
+    //   }
+    // });
   }
 
   /**

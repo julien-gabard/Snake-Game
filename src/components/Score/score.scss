@@ -2,7 +2,8 @@
 
 .score {
   position: absolute;
-  right: -12em;
+  right: -20rem;
+  width: 300px;
 
   .score-overhall {
     font-size: 42px;
@@ -12,7 +13,7 @@
     .score-overhall__number {
       color: $number-color;
       text-shadow: 0.1em 0.1em 0.2em $primary-color;
-      position: fixed;
+      position: absolute;
       margin-left: 1rem;
     }
   }
@@ -25,12 +26,16 @@
 
   .score-classification {
     margin-top: 2rem;
-    color: $second-color;
     font-size: 20px;
-    color: $snake-color;
+    display: flex;
 
     .score-classification__number {
       color: $second-color;
+    }
+
+    .score-classification__pseudo {
+      color: $snake-color;
+      margin: 0 .5rem;
     }
 
     .score-classification__score {

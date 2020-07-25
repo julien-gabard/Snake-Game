@@ -35,6 +35,13 @@
       border-radius: 5px;
       border: none;
       background-color: rgba($snake-color, 0.3);
+      
+      &:invalid {
+        background-color: rgba(255, 8, 0, 0.4);
+        &::placeholder {
+          color: rgb(126, 126, 126);
+        }
+      }
     }
   }
 

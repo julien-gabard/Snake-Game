@@ -26,12 +26,12 @@ const Score = ({ ranking, userScore, difficulty }) => {
     <div className="score">
       <p className="score-overhall">Score : <span className="score-overhall__number">{userScore}</span></p>
       <div className="score-seperate" />
-      {rankingDifficulty.map((rank) => (
-        <p className="score-classification" key={rank.id}>
-          <span className="score-classification__number">{rank.number} ) </span>
-          {rank.pseudo} :
-          <span className="score-classification__score"> {rank.score}</span>
-        </p>
+      {rankingDifficulty.map((rank, i) => (
+        <div className="score-classification" key={rank.id}>
+          <p className="score-classification__number">{i + 1} )</p>
+          <p className="score-classification__pseudo">{rank.name} :</p>
+          <p className="score-classification__score">{rank.score}</p>
+        </div>
       ))}
     </div>
   );
