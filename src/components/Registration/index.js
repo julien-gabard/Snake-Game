@@ -31,7 +31,7 @@ const Registration = ({ handleChange, pseudoSubmit, pseudo }) => {
           name="pseudo"
           autoComplete="off"
           className="registration__input"
-          placeholder="Exemple : toto"
+          placeholder="Max 10 caractères"
           onChange={changeField}
           pattern="([a-zA-Z-0-9]*)"
           required

@@ -38,9 +38,10 @@
       
       &:invalid {
         background-color: rgba(255, 8, 0, 0.4);
-        &::placeholder {
-          color: rgb(126, 126, 126);
-        }
+      }
+
+      &::placeholder {
+        color: rgba($primary-color, 0.5);
       }
     }
   }

@@ -54,7 +54,7 @@ To use it, after downloading the repo, launch the command
   - *Ubuntu 20.04*
 
 ## Version history
-#### v0.4.3 TODO...
+#### v0.4.3
 > Add your score in the ranking.
 >> Pseudo field control.
 <details>

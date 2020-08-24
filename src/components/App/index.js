@@ -78,6 +78,7 @@ class App extends React.Component {
       this.setState({
         onPlay: true,
         gameOver: false,
+        userScore: 0,
       });
     }
   }
@@ -86,35 +87,57 @@ class App extends React.Component {
    * Game over and my stop the game.
    */
   onGameOver = () => {
-    // const { ranking, userScore, pseudo } = this.state;
+    const {
+      ranking,
+      userScore,
+      difficulty,
+      pseudo,
+    } = this.state;
+
+    let newRanking = [];
 
     this.setState({
       gameOver: true,
       onPlay: false,
-      userScore: 0,
     });
 
-    // const userRank = {
-    //   id: 10,
-    //   number: 1,
-    //   name: pseudo,
-    //   score: userScore,
-    // };
-    // console.log('userRank', userRank);
+    if (difficulty === 1) {
+      newRanking = ranking.difficulty_1;
+    }
+    if (difficulty === 2) {
+      newRanking = ranking.difficulty_2;
+    }
+    if (difficulty === 3) {
+      newRanking = ranking.difficulty_3;
+    }
+    if (difficulty === 4) {
+      newRanking = ranking.difficulty_4;
+    }
 
-    // const newRanking = ranking.difficulty_1;
+    // Generate id
+    let ids = 0;
+    let max = 0;
+    ids = newRanking.map((rank) => rank.id);
+    max = Math.max(...ids);
 
-    // newRanking.forEach((rank) => {
-    //   if (userScore >= rank.score) {
-    //     console.log('Rang inférieure', rank);
-    //     // rank.splice(0, 0, userRank);
-    //     // rank.pop();
+    // Get the last index
+    let indexRank;
+    newRanking.forEach((rank, i) => {
+      if (rank.score > userScore) {
+        indexRank = i;
+      }
+    });
 
-    //     if (userScore === rank.score) {
-    //       console.log('égale', rank);
-    //     }
-    //   }
-    // });
+    // Create object user for rank
+    const userRank = {
+      id: max + 1,
+      name: pseudo,
+      score: userScore,
+    };
+
+    // position the user and delete the last element
+    newRanking.splice(indexRank + 1, 0, userRank);
+    newRanking.pop();
   }
 
   /**
