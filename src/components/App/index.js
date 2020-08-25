@@ -120,24 +120,26 @@ class App extends React.Component {
     ids = newRanking.map((rank) => rank.id);
     max = Math.max(...ids);
 
-    // Get the last index
-    let indexRank;
-    newRanking.forEach((rank, i) => {
-      if (rank.score > userScore) {
-        indexRank = i;
-      }
-    });
+    if (userScore > 0) {
+      // Get the last index
+      let indexRank;
+      newRanking.forEach((rank, i) => {
+        if (rank.score > userScore) {
+          indexRank = i;
+        }
+      });
 
-    // Create object user for rank
-    const userRank = {
-      id: max + 1,
-      name: pseudo,
-      score: userScore,
-    };
+      // Create object user for rank
+      const userRank = {
+        id: max + 1,
+        name: pseudo,
+        score: userScore,
+      };
 
-    // position the user and delete the last element
-    newRanking.splice(indexRank + 1, 0, userRank);
-    newRanking.pop();
+      // position the user and delete the last element
+      newRanking.splice(indexRank + 1, 0, userRank);
+      newRanking.pop();
+    }
   }
 
   /**

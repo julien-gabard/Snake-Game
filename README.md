@@ -53,12 +53,15 @@ To use it, after downloading the repo, launch the command
   - *Ubuntu 20.04*
 
 ## Version history
-#### v0.4.3
-> Add your score in the ranking.
->> Pseudo field control.
+#### v0.4.4
+> Add condition score 0
+
 <details>
   <summary> Old version... </summary>
-  
+
+  #### v0.4.3
+  > Add your score in the ranking.
+  >> Pseudo field control.
   #### v0.4.2
   > Addition of a classification by difficulty.
   >> Fix interval.
