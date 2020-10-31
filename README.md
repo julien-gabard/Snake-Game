@@ -1,5 +1,5 @@
 <div align="center"><img src="src/assets/favicon.ico" alt="Snake Logo" width="200px"/></div>
-<div align="center"><h1 size="4">Snake Game &copy; </h1><h3>version 0.4.3</h3><p>no responcive</p></div>
+<div align="center"><h1 size="4">Snake Game &copy; </h1><h3>Alpha version 0.4.3</h3><p>no responcive</p></div>
 
 ----------------
 
